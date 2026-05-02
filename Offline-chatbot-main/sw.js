@@ -1,4 +1,4 @@
-const CACHE_NAME = 'echomind-v3';
+const CACHE_NAME = 'echomind-v4';
 const ASSETS = [
     './',
     './index.html',

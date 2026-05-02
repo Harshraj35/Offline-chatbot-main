@@ -295,7 +295,7 @@ document.addEventListener('DOMContentLoaded', () => {
         chatWindow.scrollTop = chatWindow.scrollHeight;
 
         try {
-            const response = await fetch('https://my-chatbot-backend.onrender.com/chat/', {
+            const response = await fetch('https://echomind-backend-w74f.onrender.com/chat/', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -387,7 +387,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 formData.append('file', file);
                 formData.append('tags', 'chat_upload');
 
-                const response = await fetch('https://my-chatbot-backend.onrender.com/gallery/upload', {
+                const response = await fetch('https://echomind-backend-w74f.onrender.com/gallery/upload', {
                     method: 'POST',
                     body: formData
                 });
