@@ -55,6 +55,48 @@
         "I am running completely offline! Your data is stored locally in an SQLite database and never leaves this machine.",
         "No internet is required. Everything runs locally on your device for maximum privacy."
       ]
+    },
+    {
+      "tag": "creator",
+      "patterns": [
+        "Who created you?",
+        "Who is your developer?",
+        "Who made this?",
+        "Who is Harshraj?"
+      ],
+      "responses": [
+        "I was created by Harshraj as a premium, privacy-focused offline AI assistant.",
+        "Harshraj is my developer. He designed me to work completely on your device!",
+        "My creator is Harshraj. He built me to show that AI can be powerful without the cloud."
+      ]
+    },
+    {
+      "tag": "joke",
+      "patterns": [
+        "Tell me a joke",
+        "Make me laugh",
+        "Do you know any jokes?",
+        "Joke please"
+      ],
+      "responses": [
+        "Why did the computer go to the doctor? Because it had a virus!",
+        "Why don't scientists trust atoms? Because they make up everything!",
+        "I asked my computer for a joke, and it said: 'Windows is updating...'"
+      ]
+    },
+    {
+      "tag": "hindi_greeting",
+      "patterns": [
+        "Namaste",
+        "Kya haal hai?",
+        "Kaise ho?",
+        "Aap kaun ho?"
+      ],
+      "responses": [
+        "नमस्ते! मैं आपका EchoMind AI सहायक हूँ। मैं आपकी कैसे मदद कर सकता हूँ?",
+        "नमस्ते! सब ठीक है, आप बताइए?",
+        "मैं एक AI हूँ जो आपके डिवाइस पर ऑफलाइन काम करता हूँ।"
+      ]
     }
   ]
 }

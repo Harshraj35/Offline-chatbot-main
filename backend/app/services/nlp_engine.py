@@ -24,8 +24,14 @@ def load_model():
         logger.error(f"Failed to load model: {e}")
         raise e
 
-def load_intents(filepath: str = "backend/data/intents.json"):
+def load_intents(filepath: str = None):
     global intent_embeddings, intents_data
+    
+    if filepath is None:
+        # Get the path relative to this file: ../../data/intents.json
+        base_dir = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+        filepath = os.path.join(base_dir, "data", "intents.json")
+    
     if not os.path.exists(filepath):
         logger.warning(f"Intents file not found at {filepath}. Skipping intent loading.")
         return
