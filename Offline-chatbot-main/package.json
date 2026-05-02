@@ -1,0 +1,13 @@
+{
+  "name": "offline-chatbot",
+  "version": "1.0.0",
+  "description": "A premium, offline-capable AI assistant.",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx serve .",
+    "dev": "npx serve ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

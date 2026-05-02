@@ -1,0 +1,60 @@
+{
+  "intents": [
+    {
+      "tag": "greeting",
+      "patterns": [
+        "Hi",
+        "Hello",
+        "Hey",
+        "Good morning",
+        "Good evening",
+        "Is anyone there?"
+      ],
+      "responses": [
+        "Hello! How can I help you today?",
+        "Hi there! What can I do for you?",
+        "Greetings! I'm ready to assist you."
+      ]
+    },
+    {
+      "tag": "goodbye",
+      "patterns": [
+        "Bye",
+        "See you later",
+        "Goodbye",
+        "Catch you later"
+      ],
+      "responses": [
+        "Goodbye! Have a great day.",
+        "See you later!",
+        "Bye! Feel free to reach out if you need anything else."
+      ]
+    },
+    {
+      "tag": "capabilities",
+      "patterns": [
+        "What can you do?",
+        "How can you help me?",
+        "What are your features?",
+        "Tell me about yourself"
+      ],
+      "responses": [
+        "I am an offline AI assistant. I can answer questions, search your local Edge Gallery files, and help you with reasoning tasks.",
+        "I can help you by searching through your uploaded files, answering basic queries, and keeping your data totally private and offline."
+      ]
+    },
+    {
+      "tag": "status",
+      "patterns": [
+        "Are you online?",
+        "Do you need internet?",
+        "Is this offline?",
+        "How is my data stored?"
+      ],
+      "responses": [
+        "I am running completely offline! Your data is stored locally in an SQLite database and never leaves this machine.",
+        "No internet is required. Everything runs locally on your device for maximum privacy."
+      ]
+    }
+  ]
+}

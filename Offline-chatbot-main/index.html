@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>EchoMind AI | Intelligent Assistant</title>
+    <meta name="description" content="Offline-capable, premium AI assistant running on-device for desktop and mobile.">
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" href="assets/logo.png" type="image/png">
+    <meta name="theme-color" content="#0a0a0a">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar for Desktop -->
+        <aside class="sidebar">
+            <div class="logo">
+                <div class="logo-icon"></div>
+                <h1>EchoMind</h1>
+            </div>
+            <nav class="nav-menu">
+                <button class="nav-item active" id="btn-chat">
+                    <span class="icon">💬</span>
+                    <span>Chat</span>
+                </button>
+                <button class="nav-item" id="btn-history">
+                    <span class="icon">📜</span>
+                    <span>History</span>
+                </button>
+                <button class="nav-item" id="btn-settings">
+                    <span class="icon">⚙️</span>
+                    <span>Settings</span>
+                </button>
+            </nav>
+            <div class="status-card">
+                <div class="status-indicator online"></div>
+                <span>On-Device Ready</span>
+            </div>
+        </aside>
+
+        <!-- Main Chat Area -->
+        <main class="main-content">
+            <header class="chat-header">
+                <div class="header-info">
+                    <h2>AI Assistant</h2>
+                    <p>Always active, totally private</p>
+                </div>
+                <div class="header-actions">
+                    <button class="icon-btn" id="header-clear" title="Clear Chat">🗑️</button>
+                    <button class="icon-btn" id="header-export" title="Export">📤</button>
+                </div>
+            </header>
+
+            <div class="chat-window active-view" id="chat-window">
+                <div class="welcome-screen">
+                    <div class="welcome-icon">✨</div>
+                    <h3>How can I help you today?</h3>
+                    <p>I'm your on-device AI assistant, capable of coding, reasoning, and task management.</p>
+                </div>
+                <!-- Messages will be injected here -->
+            </div>
+
+            <!-- History View -->
+            <div class="history-view" id="history-view">
+                <header class="section-header">
+                    <h3>Chat History</h3>
+                    <button class="clear-history-btn" id="clear-history">Clear All</button>
+                </header>
+                <div class="history-list" id="history-list">
+                    <!-- History items will be injected here -->
+                    <div class="empty-state">No past conversations found.</div>
+                </div>
+            </div>
+
+            <!-- Settings View -->
+            <div class="settings-view" id="settings-view">
+                <header class="section-header">
+                    <h3>Settings</h3>
+                </header>
+                <div class="settings-content">
+                    <div class="setting-group">
+                        <label>Language</label>
+                        <select id="language-select">
+                            <option value="en">English</option>
+                            <option value="hi">हिन्दी (Hindi)</option>
+                        </select>
+                    </div>
+                    <div class="setting-group">
+                        <label>AI Response Speed</label>
+                        <input type="range" min="500" max="3000" step="500" value="1500" id="speed-slider">
+                    </div>
+                    <div class="setting-group">
+                        <label>Notifications</label>
+                        <input type="checkbox" id="notify-toggle" checked>
+                    </div>
+                </div>
+            </div>
+
+            <footer class="input-area" id="input-area">
+                <div class="suggestions">
+                    <button class="suggestion-chip" id="suggest-code">Write some code</button>
+                    <button class="suggestion-chip" id="suggest-concept">Explain a concept</button>
+                    <button class="suggestion-chip" id="suggest-homework">Help with homework</button>
+                </div>
+                <form class="message-form" id="message-form">
+                    <div class="input-wrapper">
+                        <textarea id="user-input" placeholder="Type your message here..." rows="1"></textarea>
+                        <div class="input-tools">
+                            <button type="button" class="tool-btn" id="upload-img" title="Upload Image">📷</button>
+                            <button type="button" class="tool-btn" id="voice-btn" title="Voice Input">🎤</button>
+                        </div>
+                    </div>
+                    <button type="submit" class="send-btn" id="send-btn">
+                        <svg viewBox="0 0 24 24" width="24" height="24">
+                            <path fill="currentColor" d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"></path>
+                        </svg>
+                    </button>
+                </form>
+            </footer>
+        </main>
+    </div>
+
+    <!-- Notification system -->
+    <div id="toast-container"></div>
+
+    <script src="app.js"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('sw.js').then(reg => {
+                    console.log('SW Registered', reg);
+                }).catch(err => {
+                    console.log('SW Registration failed', err);
+                });
+            });
+        }
+    </script>
+</body>
+</html>

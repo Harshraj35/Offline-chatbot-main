@@ -1,0 +1,17 @@
+{
+  "name": "EchoMind AI Assistant",
+  "short_name": "EchoMind",
+  "description": "Offline-capable, premium AI assistant running on-device.",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#0a0a0a",
+  "theme_color": "#00d4ff",
+  "icons": [
+    {
+      "src": "assets/logo.png",
+      "sizes": "1024x1024",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
