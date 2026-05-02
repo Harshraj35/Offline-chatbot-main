@@ -295,7 +295,7 @@ document.addEventListener('DOMContentLoaded', () => {
         chatWindow.scrollTop = chatWindow.scrollHeight;
 
         try {
-            const response = await fetch('http://localhost:8000/chat/', {
+            const response = await fetch('https://my-chatbot-backend.onrender.com/chat/', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -326,7 +326,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 chatWindow.removeChild(typingDiv);
             }
             const errorMsg = currentLanguage === 'en' 
-                ? "Error: Could not connect to the offline AI backend. Make sure the server is running on localhost:8000."
+                ? "Error: Could not connect to the AI backend. Make sure the server is running."
                 : "त्रुटि: ऑफ़लाइन AI बैकएंड से कनेक्ट नहीं हो सका। सुनिश्चित करें कि सर्वर चल रहा है।";
             addMessage(errorMsg, 'ai');
             saveToHistory(errorMsg, 'ai');
@@ -387,7 +387,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 formData.append('file', file);
                 formData.append('tags', 'chat_upload');
 
-                const response = await fetch('http://localhost:8000/gallery/upload', {
+                const response = await fetch('https://my-chatbot-backend.onrender.com/gallery/upload', {
                     method: 'POST',
                     body: formData
                 });
@@ -412,7 +412,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     chatWindow.removeChild(typingDiv);
                 }
                 const errorMsg = currentLanguage === 'en' 
-                    ? "Error: Could not upload to Edge Gallery. Is the backend server running on localhost:8000?"
+                    ? "Error: Could not upload to Edge Gallery. Is the backend server running?"
                     : "त्रुटि: एज गैलरी में अपलोड नहीं किया जा सका। क्या बैकएंड सर्वर चल रहा है?";
                 addMessage(errorMsg, 'ai');
                 saveToHistory(errorMsg, 'ai');
