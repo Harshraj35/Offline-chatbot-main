@@ -71,8 +71,15 @@ def get_embedding(text: str) -> np.ndarray:
 
 def predict_intent(text: str, threshold: float = 0.5):
     """Predict the intent of a given text using cosine similarity."""
+    global intent_embeddings
+    
+    # Auto-load intents if they haven't been loaded yet
     if not intent_embeddings or "embeddings" not in intent_embeddings:
-        return None, "I'm sorry, I don't have any trained intents yet."
+        logger.info("Intent embeddings not found. Attempting to load intents...")
+        load_intents()
+        
+    if not intent_embeddings or "embeddings" not in intent_embeddings:
+        return None, "I'm sorry, I don't have any trained intents yet. Please check if intents.json exists."
         
     try:
         query_emb = get_embedding(text).reshape(1, -1)
