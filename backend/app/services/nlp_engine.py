@@ -84,9 +84,25 @@ def predict_intent(text: str, threshold: float = 0.5):
         
         if best_score >= threshold:
             matched_intent = intent_embeddings["mappings"][best_match_idx]
+            tag = matched_intent.get("tag")
+            
             import random
             response = random.choice(matched_intent.get("responses", ["I understood but have no response."]))
-            return matched_intent.get("tag"), response
+            
+            # Special handling for gallery intents
+            from app.services.gallery_service import gallery_service
+            if tag == "gallery_skills":
+                skills = gallery_service.get_all_skills()
+                if skills:
+                    skill_names = ", ".join([s['name'] for s in skills[:5]])
+                    response += f"\n\nSome of the featured skills include: {skill_names}, and more!"
+            elif tag == "gallery_models":
+                models = gallery_service.get_all_models()
+                if models:
+                    model_names = ", ".join([m['name'] for m in models[:3]])
+                    response += f"\n\nCurrently supported models include: {model_names}."
+            
+            return tag, response
         else:
             return "unknown", "I'm not quite sure I understand. Could you rephrase?"
     except Exception as e:

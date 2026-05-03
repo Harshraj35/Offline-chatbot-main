@@ -1,0 +1,84 @@
+[
+  {
+    "id": "calculate-hash",
+    "name": "Calculate Hash",
+    "description": "Calculate the hash of a given text.",
+    "category": "Built-in",
+    "patterns": ["Calculate hash of...", "What is the hash of..."]
+  },
+  {
+    "id": "interactive-map",
+    "name": "Interactive Map",
+    "description": "Show an interactive map view for the given location.",
+    "category": "Built-in",
+    "patterns": ["Show [a place] on interactive map", "Find [a place] on interactive map"]
+  },
+  {
+    "id": "kitchen-adventure",
+    "name": "Kitchen Adventure",
+    "description": "Act as a dungeon master for a text-based adventure set in a world where everyone is a sentient kitchen appliance.",
+    "category": "Built-in",
+    "patterns": ["start kitchen adventure"]
+  },
+  {
+    "id": "mood-tracker",
+    "name": "Mood Tracker",
+    "description": "A simple mood tracking skill that stores your daily mood and comments.",
+    "category": "Built-in",
+    "patterns": ["log my mood", "track how I feel", "see my mood history"]
+  },
+  {
+    "id": "qr-code",
+    "name": "QR Code Generator",
+    "description": "Generates a QR code for the given url.",
+    "category": "Built-in",
+    "patterns": ["generate a QR code for...", "show me a QR code for..."]
+  },
+  {
+    "id": "query-wikipedia",
+    "name": "Wikipedia Query",
+    "description": "Query summary from Wikipedia for a given topic.",
+    "category": "Built-in",
+    "patterns": ["Search Wikipedia for...", "What does Wikipedia say about..."]
+  },
+  {
+    "id": "send-email",
+    "name": "Send Email",
+    "description": "Send an email.",
+    "category": "Built-in",
+    "patterns": ["Send an email to...", "Email [person] about..."]
+  },
+  {
+    "id": "text-spinner",
+    "name": "Text Spinner",
+    "description": "Spin the given text on my head.",
+    "category": "Built-in",
+    "patterns": ["Spin the text...", "Text spinner for..."]
+  },
+  {
+    "id": "mood-music",
+    "name": "Mood Music",
+    "description": "Suggest or play music based on the user's mood.",
+    "category": "Featured",
+    "patterns": ["music for a specific mood", "playlist ideas for a vibe", "music to match this image/audio"]
+  },
+  {
+    "id": "restaurant-roulette",
+    "name": "Restaurant Roulette",
+    "description": "Randomly select a restaurant based on location and cuisine.",
+    "category": "Featured",
+    "patterns": [
+      "Suggest Mexican food in San Jose.",
+      "Find a random Italian restaurant near Sunnyvale.",
+      "Where should I get Sushi in San Francisco today?",
+      "Show a restaurant roulette for Indian food in Palo Alto."
+    ]
+  },
+  {
+    "id": "virtual-piano",
+    "name": "Virtual Piano",
+    "description": "A virtual piano skill that allows users to play notes and chords.",
+    "category": "Featured",
+    "patterns": ["play the piano", "open virtual piano"]
+  }
+]

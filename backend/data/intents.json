@@ -97,6 +97,34 @@
         "नमस्ते! सब ठीक है, आप बताइए?",
         "मैं एक AI हूँ जो आपके डिवाइस पर ऑफलाइन काम करता हूँ।"
       ]
+    },
+    {
+      "tag": "gallery_skills",
+      "patterns": [
+        "What AI skills do you have?",
+        "Tell me about your skills",
+        "What can you do with AI?",
+        "List all available skills",
+        "Show me the skill gallery"
+      ],
+      "responses": [
+        "I have a variety of AI-powered skills from the Google AI Edge Gallery, including Wikipedia search, QR code generation, and mood tracking. Which one would you like to know more about?",
+        "You can explore skills like Wikipedia Query, Kitchen Adventure, or Mood Music. I can give you details on any of them!"
+      ]
+    },
+    {
+      "tag": "gallery_models",
+      "patterns": [
+        "What AI models are supported?",
+        "Which models do you use?",
+        "Tell me about Gemma",
+        "List the supported models",
+        "What is the largest model available?"
+      ],
+      "responses": [
+        "I support several high-performance on-device models like Gemma-3, Gemma-4, Qwen2.5, and DeepSeek-R1. They are optimized for privacy and speed on your device.",
+        "The supported models include Gemma variants (2B, 4B), Qwen, and DeepSeek. Each is designed for specific tasks like chat, vision, or reasoning."
+      ]
     }
   ]
 }

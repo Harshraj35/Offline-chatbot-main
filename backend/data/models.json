@@ -1,0 +1,44 @@
+[
+  {
+    "name": "Gemma-4-E2B-it",
+    "id": "litert-community/gemma-4-E2B-it-litert-lm",
+    "description": "A variant of Gemma 4 E2B with up to 32K context length. Supports multi-modality input.",
+    "size": "2.4 GB",
+    "tasks": ["llm_chat", "llm_ask_image", "llm_ask_audio"]
+  },
+  {
+    "name": "Gemma-4-E4B-it",
+    "id": "litert-community/gemma-4-E4B-it-litert-lm",
+    "description": "A variant of Gemma 4 E4B with up to 32K context length. Supports multi-modality input.",
+    "size": "3.4 GB",
+    "tasks": ["llm_chat", "llm_ask_image", "llm_ask_audio"]
+  },
+  {
+    "name": "Gemma-3n-E2B-it",
+    "id": "google/gemma-3n-E2B-it-litert-lm",
+    "description": "A variant of Gemma 3n E2B. Supports text, vision, and audio input.",
+    "size": "3.4 GB",
+    "tasks": ["llm_chat", "llm_ask_image", "llm_ask_audio"]
+  },
+  {
+    "name": "Gemma3-1B-IT",
+    "id": "litert-community/Gemma3-1B-IT",
+    "description": "A variant of Gemma-3-1B-IT with 4-bit quantization.",
+    "size": "557 MB",
+    "tasks": ["llm_chat", "llm_prompt_lab"]
+  },
+  {
+    "name": "Qwen2.5-1.5B-Instruct",
+    "id": "litert-community/Qwen2.5-1.5B-Instruct",
+    "description": "A variant of Qwen2.5-1.5B-Instruct ready for deployment on Android.",
+    "size": "1.5 GB",
+    "tasks": ["llm_chat", "llm_prompt_lab"]
+  },
+  {
+    "name": "DeepSeek-R1-Distill-Qwen-1.5B",
+    "id": "litert-community/DeepSeek-R1-Distill-Qwen-1.5B",
+    "description": "A variant of DeepSeek-R1-Distill-Qwen-1.5B.",
+    "size": "1.7 GB",
+    "tasks": ["llm_chat", "llm_prompt_lab"]
+  }
+]
