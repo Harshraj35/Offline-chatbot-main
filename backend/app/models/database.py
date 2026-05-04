@@ -3,7 +3,11 @@ from sqlalchemy import create_engine, Column, Integer, String, Text, DateTime, L
 from sqlalchemy.orm import declarative_base, sessionmaker
 from datetime import datetime
 
-DATABASE_URL = "sqlite:///./backend/database/chatbot.db"
+# Base directory of the project (backend folder)
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+DATABASE_DIR = os.path.join(BASE_DIR, "backend", "database")
+DATABASE_PATH = os.path.join(DATABASE_DIR, "chatbot.db")
+DATABASE_URL = f"sqlite:///{DATABASE_PATH}"
 
 engine = create_engine(
     DATABASE_URL, connect_args={"check_same_thread": False}

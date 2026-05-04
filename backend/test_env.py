@@ -17,3 +17,9 @@ try:
     print("SentenceTransformers imported successfully")
 except ImportError:
     print("SentenceTransformers not installed")
+
+try:
+    import PyPDF2
+    print("PyPDF2 imported successfully")
+except ImportError:
+    print("PyPDF2 not installed")
