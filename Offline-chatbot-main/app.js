@@ -288,7 +288,12 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Configuration
-    const API_BASE_URL = window.location.hostname === 'uvicorn' || window.location.hostname === '0.0.0.0'
+    const isLocal = window.location.hostname === 'localhost' || 
+                   window.location.hostname === '127.0.0.1' || 
+                   window.location.hostname === '0.0.0.0' ||
+                   window.location.hostname.includes('192.168.');
+
+    const API_BASE_URL = isLocal
         ? 'http://localhost:10000'
         : 'https://echomind-backend-w74f.onrender.com';
 

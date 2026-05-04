@@ -50,4 +50,5 @@ def read_root():
 
 if __name__ == "__main__":
     import uvicorn
-    uvicorn.run(app, host="127.0.0.1", port=8000)
+    # Use 10000 to match Render and Frontend expectations
+    uvicorn.run(app, host="127.0.0.1", port=10000)
