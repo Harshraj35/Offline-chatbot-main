@@ -47,3 +47,7 @@ app.include_router(gallery.router)
 @app.get("/")
 def read_root():
     return {"status": "online", "message": "Offline Chatbot Backend is running."}
+
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run(app, host="127.0.0.1", port=8000)
