@@ -288,7 +288,9 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Configuration
-    const API_BASE_URL = 'http://localhost:8000'; // Changed from remote Render URL for local development
+    const API_BASE_URL = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
+        ? 'http://localhost:8000'
+        : 'https://echomind-backend-w74f.onrender.com';
 
     async function simulateAIResponse(userText) {
         const typingDiv = document.createElement('div');
