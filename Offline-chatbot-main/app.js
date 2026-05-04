@@ -287,6 +287,9 @@ document.addEventListener('DOMContentLoaded', () => {
         downloadAnchorNode.remove();
     });
 
+    // Configuration
+    const API_BASE_URL = 'http://localhost:8000'; // Changed from remote Render URL for local development
+
     async function simulateAIResponse(userText) {
         const typingDiv = document.createElement('div');
         typingDiv.classList.add('message', 'ai', 'typing');
@@ -295,7 +298,7 @@ document.addEventListener('DOMContentLoaded', () => {
         chatWindow.scrollTop = chatWindow.scrollHeight;
 
         try {
-            const response = await fetch('https://echomind-backend-w74f.onrender.com/chat/', {
+            const response = await fetch(`${API_BASE_URL}/chat/`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -387,7 +390,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 formData.append('file', file);
                 formData.append('tags', 'chat_upload');
 
-                const response = await fetch('https://echomind-backend-w74f.onrender.com/gallery/upload', {
+                const response = await fetch(`${API_BASE_URL}/gallery/upload`, {
                     method: 'POST',
                     body: formData
                 });

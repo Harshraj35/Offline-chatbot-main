@@ -29,8 +29,9 @@ def load_intents(filepath: str = None):
     
     if filepath is None:
         # Get the path relative to this file: ../../data/intents.json
-        base_dir = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-        filepath = os.path.join(base_dir, "data", "intents.json")
+        # This is more robust than using a hardcoded relative path if run from different CWDs
+        current_file_dir = os.path.dirname(os.path.abspath(__file__))
+        filepath = os.path.join(current_file_dir, "..", "..", "data", "intents.json")
     
     if not os.path.exists(filepath):
         logger.warning(f"Intents file not found at {filepath}. Skipping intent loading.")
@@ -51,7 +52,11 @@ def load_intents(filepath: str = None):
                 all_patterns.append(pattern)
                 pattern_to_intent.append(intent)
                 
-        if all_patterns and model:
+        if all_patterns:
+            # Ensure model is loaded before encoding
+            if model is None:
+                load_model()
+                
             logger.info(f"Encoding {len(all_patterns)} intent patterns...")
             embeddings = model.encode(all_patterns)
             
@@ -74,12 +79,14 @@ def predict_intent(text: str, threshold: float = 0.5):
     global intent_embeddings
     
     # Auto-load intents if they haven't been loaded yet
-    if not intent_embeddings or "embeddings" not in intent_embeddings:
+    # Check if it's empty or doesn't have the expected keys
+    if not intent_embeddings or not isinstance(intent_embeddings, dict) or "embeddings" not in intent_embeddings:
         logger.info("Intent embeddings not found. Attempting to load intents...")
         load_intents()
         
-    if not intent_embeddings or "embeddings" not in intent_embeddings:
-        return None, "I'm sorry, I don't have any trained intents yet. Please check if intents.json exists."
+    # Final check after attempt to load
+    if not intent_embeddings or not isinstance(intent_embeddings, dict) or "embeddings" not in intent_embeddings:
+        return "error", "I'm sorry, I don't have any trained intents yet. Please ensure data/intents.json is present and valid."
         
     try:
         query_emb = get_embedding(text).reshape(1, -1)
@@ -89,6 +96,8 @@ def predict_intent(text: str, threshold: float = 0.5):
         best_match_idx = np.argmax(similarities)
         best_score = similarities[best_match_idx]
         
+        logger.info(f"Top intent match score: {best_score:.4f}")
+        
         if best_score >= threshold:
             matched_intent = intent_embeddings["mappings"][best_match_idx]
             tag = matched_intent.get("tag")
@@ -97,17 +106,20 @@ def predict_intent(text: str, threshold: float = 0.5):
             response = random.choice(matched_intent.get("responses", ["I understood but have no response."]))
             
             # Special handling for gallery intents
-            from app.services.gallery_service import gallery_service
-            if tag == "gallery_skills":
-                skills = gallery_service.get_all_skills()
-                if skills:
-                    skill_names = ", ".join([s['name'] for s in skills[:5]])
-                    response += f"\n\nSome of the featured skills include: {skill_names}, and more!"
-            elif tag == "gallery_models":
-                models = gallery_service.get_all_models()
-                if models:
-                    model_names = ", ".join([m['name'] for m in models[:3]])
-                    response += f"\n\nCurrently supported models include: {model_names}."
+            try:
+                from app.services.gallery_service import gallery_service
+                if tag == "gallery_skills":
+                    skills = gallery_service.get_all_skills()
+                    if skills:
+                        skill_names = ", ".join([s['name'] for s in skills[:5]])
+                        response += f"\n\nSome of the featured skills include: {skill_names}, and more!"
+                elif tag == "gallery_models":
+                    models = gallery_service.get_all_models()
+                    if models:
+                        model_names = ", ".join([m['name'] for m in models[:3]])
+                        response += f"\n\nCurrently supported models include: {model_names}."
+            except Exception as e:
+                logger.warning(f"Could not fetch gallery info: {e}")
             
             return tag, response
         else:
