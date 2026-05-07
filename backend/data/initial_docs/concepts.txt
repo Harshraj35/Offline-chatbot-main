@@ -1,0 +1,6 @@
+# Important AI and Tech Concepts
+- Machine Learning: A field of AI that allows systems to learn from data without being explicitly programmed.
+- Neural Networks: Computing systems inspired by the biological neural networks that constitute animal brains.
+- APIs (Application Programming Interfaces): A set of rules that allow different software entities to communicate with each other.
+- RAG (Retrieval-Augmented Generation): A technique to improve the output of an LLM by providing it with relevant external data.
+- Edge Computing: Processing data closer to the source (on the device) rather than in a centralized cloud.

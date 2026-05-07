@@ -1,0 +1,10 @@
+# Coding Tips and Examples
+- Always use descriptive variable names.
+- Keep functions small and focused on a single task.
+- Use version control (like Git) to track your changes.
+- Write tests for your code to ensure it works as expected.
+- For Python: Use list comprehensions for cleaner code.
+- For JavaScript: Use 'const' and 'let' instead of 'var'.
+- Example Function (Python):
+def greet(name):
+    return f"Hello, {name}!"

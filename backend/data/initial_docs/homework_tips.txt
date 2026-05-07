@@ -1,0 +1,7 @@
+# Homework and Study Strategies
+- Pomodoro Technique: Work for 25 minutes, then take a 5-minute break.
+- Active Recall: Test yourself on the material instead of just re-reading it.
+- Spaced Repetition: Review information at increasing intervals to improve long-term retention.
+- Mind Mapping: Visualize connections between different topics.
+- Feynman Technique: Try to explain a concept in simple terms to someone else.
+- Stay Organized: Use a planner or digital tool to track deadlines.

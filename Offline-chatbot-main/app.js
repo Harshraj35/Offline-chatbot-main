@@ -176,9 +176,16 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Handle suggestion chips
+    const suggestionPrompts = {
+        'suggest-code': 'Show me some coding examples or help me write some code.',
+        'suggest-concept': 'Explain an important concept to me.',
+        'suggest-homework': 'Help me with my homework or study materials.'
+    };
+
     suggestionChips.forEach(chip => {
         chip.addEventListener('click', () => {
-            userInput.value = chip.textContent;
+            const prompt = suggestionPrompts[chip.id] || chip.textContent;
+            userInput.value = prompt;
             messageForm.dispatchEvent(new Event('submit'));
         });
     });

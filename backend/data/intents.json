@@ -125,6 +125,51 @@
         "I support several high-performance on-device models like Gemma-3, Gemma-4, Qwen2.5, and DeepSeek-R1. They are optimized for privacy and speed on your device.",
         "The supported models include Gemma variants (2B, 4B), Qwen, and DeepSeek. Each is designed for specific tasks like chat, vision, or reasoning."
       ]
+    },
+    {
+      "tag": "coding_help",
+      "patterns": [
+        "Write some code",
+        "How to code",
+        "Coding examples",
+        "Program something",
+        "Show me some code"
+      ],
+      "responses": [
+        "I can definitely help with that! If you have a specific language or problem in mind, let me know. You can also upload a source file to the Edge Gallery for more specific advice.",
+        "Coding is my specialty. What are we building today? I can help with Python, JavaScript, HTML/CSS, and more.",
+        "Sure thing! Here's a quick tip: always keep your code modular. Do you want me to write a specific function or explain a coding pattern?"
+      ]
+    },
+    {
+      "tag": "concept_explanation",
+      "patterns": [
+        "Explain a concept",
+        "How does this work?",
+        "Tell me about",
+        "Explain the theory",
+        "Concept definition"
+      ],
+      "responses": [
+        "I love explaining complex ideas! Which concept are you curious about? I can break down technical, scientific, or general topics for you.",
+        "Concepts are easier to understand when broken into parts. Tell me what you're studying, and I'll give you a clear explanation.",
+        "I can help you understand new concepts by providing simple analogies and examples. What's on your mind?"
+      ]
+    },
+    {
+      "tag": "homework_help",
+      "patterns": [
+        "Help with homework",
+        "Study help",
+        "School assignment",
+        "Practice problems",
+        "Help me learn"
+      ],
+      "responses": [
+        "I'm here to support your learning! Tell me about your assignment or the topic you're struggling with.",
+        "Need help with homework? I can explain problems, provide practice questions, or summarize study materials for you.",
+        "Education is key! Let's tackle that homework together. What subject are we working on?"
+      ]
     }
   ]
 }
