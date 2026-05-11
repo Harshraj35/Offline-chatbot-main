@@ -170,6 +170,86 @@
         "Need help with homework? I can explain problems, provide practice questions, or summarize study materials for you.",
         "Education is key! Let's tackle that homework together. What subject are we working on?"
       ]
+    },
+    {
+      "tag": "motivation",
+      "patterns": [
+        "Give me some motivation",
+        "I feel down",
+        "Inspire me",
+        "Motivational quote",
+        "I need a push"
+      ],
+      "responses": [
+        "Believe in yourself! Every expert was once a beginner.",
+        "Your only limit is your mind. Keep pushing forward!",
+        "Success is not final, failure is not fatal: it is the courage to continue that counts.",
+        "The best way to predict the future is to create it."
+      ]
+    },
+    {
+      "tag": "productivity",
+      "patterns": [
+        "How to be productive?",
+        "Time management tips",
+        "Stop procrastinating",
+        "How to focus?",
+        "Productivity hacks"
+      ],
+      "responses": [
+        "Try the Pomodoro Technique: 25 minutes of work followed by a 5-minute break.",
+        "Break large tasks into smaller, manageable steps. It makes them less daunting!",
+        "Minimize distractions: turn off notifications and create a dedicated workspace.",
+        "Prioritize your tasks using the Eisenhower Matrix: focus on what is urgent and important."
+      ]
+    },
+    {
+      "tag": "debugging",
+      "patterns": [
+        "How to debug code?",
+        "My code is not working",
+        "Fixing errors",
+        "Debugging steps",
+        "Common programming mistakes"
+      ],
+      "responses": [
+        "First, read the error message carefully. It usually tells you exactly what went wrong and where.",
+        "Use print statements or a debugger to track variable values at different stages.",
+        "Explain your code to someone else (or a rubber duck). This often helps you find the logic flaw.",
+        "Check for common issues: syntax errors, off-by-one errors, or incorrect variable types."
+      ]
+    },
+    {
+      "tag": "project_ideas",
+      "patterns": [
+        "Give me a project idea",
+        "What should I build?",
+        "Coding project for beginners",
+        "Portfolio project ideas",
+        "Creative coding ideas"
+      ],
+      "responses": [
+        "How about a personal budget tracker? It's great for practicing CRUD operations.",
+        "A weather app using a public API is a classic and very useful project.",
+        "You could build a simple task manager or a To-Do list with local storage.",
+        "Try creating a markdown previewer or a simple chat application!"
+      ]
+    },
+    {
+      "tag": "health_basics",
+      "patterns": [
+        "Health tips",
+        "Stay healthy while coding",
+        "Eye strain relief",
+        "Posture for programmers",
+        "Healthy habits"
+      ],
+      "responses": [
+        "Remember the 20-20-20 rule: every 20 minutes, look at something 20 feet away for 20 seconds to reduce eye strain.",
+        "Stay hydrated! Keep a water bottle at your desk and drink regularly.",
+        "Maintain a good posture. Keep your back straight and your monitor at eye level.",
+        "Take short walk breaks to keep your blood flowing and clear your mind."
+      ]
     }
   ]
 }

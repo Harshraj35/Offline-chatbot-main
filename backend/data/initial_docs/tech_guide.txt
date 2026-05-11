@@ -1,0 +1,20 @@
+# Tech Guide: Modern Software Development
+
+## Tech Stacks
+- Frontend: React, Vue, Next.js, Tailwind CSS
+- Backend: FastAPI, Node.js, Go, Rust
+- Database: PostgreSQL, MongoDB, SQLite (Offline)
+- Mobile: Flutter, React Native
+
+## Debugging Techniques
+1. Reproduce the bug consistently.
+2. Check the logs and error messages.
+3. Use a debugger or print statements.
+4. Binary Search: Comment out parts of code to isolate the issue.
+5. Rubber Duck Debugging: Explain the problem out loud.
+
+## Software Architecture
+- Clean Architecture: Decouple business logic from frameworks.
+- Microservices: Small, independent services communicating via APIs.
+- Monolith: A single unified codebase (easier for small projects).
+- MVC: Model-View-Controller pattern for UI separation.

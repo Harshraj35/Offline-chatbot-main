@@ -1,0 +1,16 @@
+# Math and Science Fundamentals
+
+## Mathematics
+- Pythagorean Theorem: a² + b² = c² (for right-angled triangles)
+- Quadratic Formula: x = [-b ± sqrt(b² - 4ac)] / 2a
+- Area of Circle: A = πr²
+- Order of Operations: PEMDAS (Parentheses, Exponents, Multiplication/Division, Addition/Subtraction)
+
+## Science
+- Newton's Laws of Motion:
+  1. Object stays at rest unless acted upon.
+  2. F = ma (Force equals mass times acceleration).
+  3. For every action, there is an equal and opposite reaction.
+- Photosynthesis: Plants convert sunlight, water, and CO2 into glucose and oxygen.
+- DNA: Deoxyribonucleic acid, the molecule that carries genetic information.
+- Atomic Structure: Protons and neutrons in the nucleus, electrons in orbits.
